@@ -1,9 +1,14 @@
 const path = require('path')
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const srcPath = path.resolve(__dirname, "../src")
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     devtool: 'source-map',
+    entry: {
+        app: [path.join(srcPath, 'main.js')]
+    },
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/',
@@ -11,13 +16,6 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '~': path.resolve(__dirname, '../src'),
-            '~assets': path.resolve(__dirname, '../src/assets'),
-            '~common': path.resolve(__dirname, '../src/common'),
-            '~components': path.resolve(__dirname, '../src/components'),
-            '~store': path.resolve(__dirname, '../src/store'),
-            '~pages': path.resolve(__dirname, '../src/pages'),
-            '~directives': path.resolve(__dirname, '../src/directives')
         }
     },
     module: {
@@ -46,4 +44,7 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
 }

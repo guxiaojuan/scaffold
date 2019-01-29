@@ -4,10 +4,7 @@ import App from './pages/App.vue'
 import storeFactory from './store'
 import router from './router'
 
-Vue.use(ElementUI)
-Vue.use(vueTap)
 const store = storeFactory()
-sync(store, router)
 
 const app = new Vue(Object.assign({
     router,

@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^7.1.1",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "forward-request": "^1.0.1",
